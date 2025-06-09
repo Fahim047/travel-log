@@ -5,7 +5,8 @@
   "packageManager": "pnpm@10.11.1+sha512.e519b9f7639869dc8d5c3c5dfef73b3f091094b0a006d7317353c72b124e80e1afd429732e28705ad6bfa1ee879c1fce46c128ccebd3192101f43dd67c667912",
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev",
+    "dev": "concurrently \"pnpm run dev:db\" \"nuxt dev\"",
+    "dev:db": "turso dev --db-file local.db",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
@@ -14,10 +15,13 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@libsql/client": "^0.15.9",
     "@nuxt/eslint": "1.4.1",
     "@nuxt/icon": "1.13.0",
     "@nuxtjs/color-mode": "3.5.2",
     "@tailwindcss/vite": "^4.1.8",
+    "concurrently": "^9.1.2",
+    "drizzle-orm": "^0.44.2",
     "eslint": "^9.28.0",
     "nuxt": "^3.17.5",
     "tailwindcss": "^4.1.8",
@@ -29,6 +33,7 @@
     "@antfu/eslint-config": "^4.13.3",
     "@iconify-json/tabler": "^1.2.19",
     "daisyui": "^5.0.43",
+    "drizzle-kit": "^0.31.1",
     "eslint-plugin-format": "^1.0.1",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.0"
