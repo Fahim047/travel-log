@@ -8,6 +8,13 @@
       "when": 1749486403041,
       "tag": "0000_lonely_mercury",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1749531796190,
+      "tag": "0001_bitter_satana",
+      "breakpoints": true
     }
   ]
 }
