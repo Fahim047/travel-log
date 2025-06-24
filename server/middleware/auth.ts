@@ -5,8 +5,8 @@ export default defineEventHandler(async (event) => {
     const session = await auth.api.getSession({
       headers: event.headers,
     });
-    if (!session) {
-      return sendRedirect(event, "/", 401);
+    if (!session?.user) {
+      return sendRedirect(event, "/", 302);
     }
   }
 });
